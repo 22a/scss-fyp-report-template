@@ -1,0 +1,66 @@
+\documentclass[a4paper, 12pt]{report}
+
+% margins
+\usepackage[a4paper, left=1.3in, right=1.3in]{geometry}
+
+% line spacing
+\linespread{1.4}
+
+% Makes page numbers, TOC, and citations clickable
+\usepackage[colorlinks]{hyperref}
+\usepackage{hyperref}
+
+% For block quotes
+\usepackage{attrib}
+
+% Used to make the captions on figures sans serif
+\usepackage{caption}
+
+% For fancy headers
+\usepackage{fancyhdr}
+
+% For including images
+\usepackage{graphicx}
+
+% For wrapping images in text
+\usepackage{wrapfig}
+
+% For syntax highlighting in code listings
+\usepackage{minted}
+
+% For tables that span multiple pages elegantly
+\usepackage{longtable}
+
+% For APA-style citations
+\usepackage[square,numbers]{natbib}
+
+% For paragraph indentation
+\usepackage{changepage}
+
+% For lines and things
+\usepackage{tikz}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14.5pt}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\bibliographystyle{apa}
+
+\input{constants}
+\input{commands}
+
+% For changing the names of the Table of Contents, etc.
+\renewcommand*{\contentsname}{Contents}
+
+% Make captions sans serif
+\renewcommand{\captionfont}{\sffamily}
+
+% Sets our default image path
+\graphicspath{ {resources/} }

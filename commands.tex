@@ -1,0 +1,53 @@
+% All the commands are defined in this file
+\newcommand \scsstitlepage{\include{front-matter/titlepage}}
+\newcommand \declaration{\include{front-matter/declaration}}
+\newcommand \permissiontolend{\include{front-matter/permissiontolend}}
+\newcommand \acknowledgements{\include{front-matter/acknowledgements}}
+\newcommand \projectabstract{\include{front-matter/abstract}}
+
+\newcommand \insertchapter[1]{\include{chapters/#1}}
+\newcommand \projectbibliography{\bibliography{bibliography.bib}}
+
+\newcommand \ibidp{(\emph{Ibid.})}
+\newcommand \ibid{\emph{Ibid.}}
+
+\def\drawsig#1{
+    \vbox{\hsize=8cm
+    \kern 2cm \hrule \kern 1ex
+    \hbox to \hsize{\strut\hfil #1, \submissiondate \hfil}}
+}
+
+% This draws the lines that you sign on for the declaration pages
+\newcommand{\signedanddate} [3] []{
+    \begin{center}
+        \vspace{3cm}
+        \begin{tikzpicture}
+            \draw[#2-#3, thick, #1] (0,0) to (0.4\linewidth,0);
+            \node[align=left, below] at (1.75,0) {\authorname};
+            
+            \draw[#2-#3, thick, #1] (0.6\linewidth,0) to (0.9\linewidth,0);
+            \node[align=left,below] at(0.666\linewidth,0) {Date};
+        \end{tikzpicture}
+    \end{center}
+}
+
+\newcommand \signed[1]{
+    \signedanddate{}{}
+}
+
+\newcommand \draft{
+    \usepackage[printwatermark]{xwatermark}
+    \usepackage{xcolor}
+    \newsavebox\mybox
+    \savebox\mybox{
+        \tikz[color=pink,opacity=0.4]
+        \node{DRAFT};
+    }
+    \newwatermark*[
+        allpages,
+        angle=45,
+        scale=10,
+        xpos=-55,
+        ypos=60
+    ]{\usebox\mybox}
+}

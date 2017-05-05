@@ -1,0 +1,49 @@
+\include{preamble}
+
+% uncomment the line below to print a "DRAFT" watermark on each page
+% \draft
+
+\begin{document}
+
+\scsstitlepage
+
+%%%%%%%%%%%%%% Front matter %%%%%%%%%%%%%%
+
+% roman numeral page numbers before our report content
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+\declaration
+\permissiontolend
+\projectabstract
+\acknowledgements
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%% Body %%%%%%%%%%%%%%%%%%
+
+\newpage
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\insertchapter{introduction}
+
+% include any other chapters in the chapters directory
+% and then insert them here:
+% \insertchapter{background}
+% \insertchapter{design}
+% \insertchapter{implementation}
+% \insertchapter{results}
+% \insertchapter{conclusion}
+
+%%%%%%%%%%%%%% Back matter %%%%%%%%%%%%%%%
+
+% Mention your silly dvd in the table of contents
+\addtocontents{toc}{
+    \vspace{4mm}
+    \textbf{Source Code DVD}
+}
+
+\projectbibliography
+
+\end{document}
